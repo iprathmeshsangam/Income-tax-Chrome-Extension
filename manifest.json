@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "Income Tax Credential Manager",
+    "version": "0.0.1",
+    "description": "Income Tax Crendential Manager to manage your client data",
+    "author": "iprathmeshsangam@gmail.com",
+    "icons": {
+        "16": "images/Logo.png",
+        "48": "images/Logo.png",
+        "128": "images/Logo.png"
+    },
+    "host_permissions":["https://eportal.incometax.gov.in/iec/foservices/#/login"],
+    "optional_host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ],
+    "background":{
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/Logo.png",
+            "48": "images/Logo.png",
+            "128": "images/Logo.png"
+        },
+        "default_title": "Income Tax Credential Manager"
+    },
+    "permissions": ["storage","scripting","tabs","activeTab"],
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "css": ["contentStyle.css"],
+          "js": ["contentScript.js"]
+        }
+      ]
+}
+    

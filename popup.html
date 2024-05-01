@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h3>Income Tax Credential Manager</h3>
+        <div class="form-group">
+            <div class="selection-input">
+                <select name="inputClients" id="form-select">
+                    <option value="-1">(New Client)</option>
+                </select>
+            </div>
+            <div class="column-btn">
+                <button class="btn-user" id="btnPasteUser">Login</button>
+            </div>
+        </div>
+
+
+        <div class="sec-client-form">
+            <div class="form-title">
+                Add / Edit / Delete
+            </div>
+            <div class="see-client-container">
+                <input type="text" name="textClientName" id="textClientName" placeholder="Enter Client Name">
+                <input type="text" name="textClientUsername" id="textClientUsername"
+                    placeholder="PAN / AADHAAR / OTHER USER ID" maxlength="10">
+                <input type="text" name="textClientPassword" id="textClientPassword" placeholder="Password">
+            </div>
+        </div>
+        <div class="container-btn">
+            <button id="add">Add</button>
+            <button id="update">Update</button>
+            <button id="delete">Delete</button>
+        </div>
+        <div class="alert">
+            <p id="clientNameAlert"></p>
+            <p id="usernameAlert"></p>
+            <p id="passwordAlert"></p>
+        </div>
+        <footer>
+            <p>Chaurasia Consultancy. All Rights Reserved</p>
+        </footer>
+    </div>
+
+
+    <script type="module" src="./popup.js"></script>
+</body>
+
+</html>
