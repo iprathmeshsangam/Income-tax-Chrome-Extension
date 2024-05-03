@@ -31,13 +31,14 @@
                 <input type="text" name="textClientName" id="textClientName" placeholder="Enter Client Name">
                 <input type="text" name="textClientUsername" id="textClientUsername"
                     placeholder="PAN / AADHAAR / OTHER USER ID" maxlength="10">
-                <input type="text" name="textClientPassword" id="textClientPassword" placeholder="Password">
+                <input type="password" name="textClientPassword" id="textClientPassword" placeholder="Password" maxlength="25">
             </div>
         </div>
         <div class="container-btn">
             <button id="add">Add</button>
-            <button id="update">Update</button>
-            <button id="delete">Delete</button>
+            <button id="update" disabled>Update</button>
+            <button id="delete" disabled>Delete</button>
+            
         </div>
         <div class="alert">
             <p id="clientNameAlert"></p>
@@ -51,6 +52,7 @@
 
 
     <script type="module" src="./popup.js"></script>
+    
 </body>
 
 </html>
