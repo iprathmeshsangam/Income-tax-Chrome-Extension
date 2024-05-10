@@ -1,18 +1,5 @@
 console.log('content script is loaded');
 // alert("Hello from content script");
-function handleMessage(message) {
-    console.log('Received Message is : ', message);
-    let username = document.getElementById("panAdhaarUserId");
-    window.navigator.clipboard.writeText(message);
-    if (username) {
-        username.value == message;
-
-
-    } else {
-        console.error('Input Field not found');
-    }
-
-}
 
 chrome.runtime.onMessage.addListener(function (message) {
     console.log('Message Rec is : ', message);
@@ -26,16 +13,13 @@ chrome.runtime.onMessage.addListener(function (message) {
             eUser.dispatchEvent(new Event('change'));
             let event = new Event('input', { bubbles: true });
             eUser.dispatchEvent(event);
-            console.log('Username pasted')
+            // console.log('Username pasted')
             // Simulate clicking on the Submit Button
             let SubmitBtn = document.querySelector('button.large-button-primary');
 
             if (SubmitBtn && !SubmitBtn.disabled) {
                 SubmitBtn.click();
                 console.log("Button is clicked");
-
-
-
                 setTimeout(checkCheckboxAndInputPassword, 1000);
 
                 function checkCheckboxAndInputPassword() {
@@ -63,14 +47,14 @@ chrome.runtime.onMessage.addListener(function (message) {
                                         SubmitBtn.click();
                                     },1000)
                                     
-                                    console.log("Button is clicked for Password");
+                                    // console.log("Button is clicked for Password");
                                     SubmitBtn.click();  
                                 };
                             } else {
-                                console.log('Password input field not found');
+                                // console.log('Password input field not found');
                             }
                         } else {
-                            console.log("Checkbox not checked yet");
+                            // console.log("Checkbox not checked yet");
                             // setTimeout(checkCheckboxAndInputPassword, 1000);
                         }
                     }
@@ -78,11 +62,11 @@ chrome.runtime.onMessage.addListener(function (message) {
             };
         }
         else {
-            console.log('Submit button not found');
+            // console.log('Submit button not found');
         }
     }
     else {
-        console.log('Input Element Not found');
+        // console.log('Input Element Not found');
     }
 }
 );
